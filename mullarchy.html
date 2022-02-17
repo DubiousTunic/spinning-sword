@@ -1,0 +1,94 @@
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.6.347/build/pdf.min.js"></script>
+	<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+</head>
+<body>
+	<h1><a href="#">SPINNING SWORD</a></h1>
+	<button id="QRNG">QRNG</button>I DON'T WANNA WAIT
+	<br>
+	<div id="spellbook"></div>
+
+
+</body>
+<script>
+
+	var tarot = [		
+		"Dominion", "Virtue", "Completion", "Strife", "Victory", "Valour", "Swiftness", "Strength", "Oppression",
+		"Love", "Abundance", "Luxury", "Disappointment", "Pleasure", "Debauch", "Indolence", "Happiness", "Satiety",
+		"Peace", "Sorrow", "Truce", "Defeat", "Science", "Futility", "Interference", "Cruelty", "Ruin",
+		"Change", "Works", "Power", "Worry", "Success", "Failure", "Prudence", "Gain", "Wealth",
+		"Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu",
+		"kuffar", "shudra",
+		"Holy Fool!", "web of lies", "moon-maiden", "Truth", "Sire", "Wisdom", "Understanding", "Chariot", "Lion-Fortress", "dumb Guardian",
+		"The Wheeeel", "Dragonshiiit", "the God-man", "Eagle, Snake, and Scorpion!", "God-goat ecstasy afloat", "Unhood the Hawks!", 
+		"which moon", "Soul of life", "The AEon", "Naught becomes All",
+		"I hope my body can take it", "It's over 9000!", "Now he's really getting huge", "What!?", "Then the whole universe is going to die.", "No.",
+		"The balls are inert.", "I am Griffith. And you?", "Human food? Money?", "Sacred sendu", "I can't they're made of fur", "O Clementine!", 
+		"Sage.", "Quick Goku", "Friedrich Nietzsche",
+		//105
+		"I came, I saw, I conquered.", "The die has been cast.", "Seize the day.",
+		"I am he who watches they. I am the fist of retribution", "hypostatic union", "immaculate conception", "incarnation",
+		"-F35",
+		"evangie", "crucifixio", "why do the heathen rage", "He flew on his cherubim.",
+		//118
+		"I, even I?",
+		"kefir", "jiffy lube", "safelite", "jasmine", "sage", "hellfire missiles",
+		"Mine incense is purified.", "AIDS", "teh techno", "Daeth", "al-Sham", "Broken harrier Jet", "A10 Warthog", "Lightning II", 
+		"rowboat", "Sunni pirate ship", "F16 Hornet, Blue", "Skinner's Pigeons", "Sigmund Fraud", "*gnome kisses*",
+		"I am jehova's Witness", "laggy SoB", "university budget", "eternal grant",
+		//168		
+		"Jews have passed away", "Gas Oven", "Glass the kikes", "1231337", 
+		"computer emo", "brain reader", "WHEN I WAS", "wear the hijab",
+		"Hilary summons Isis", "Bill Christian","modulo!", "The Great Jasamine", 
+		/*"Force", "Field", "Sprouting", "Enveloping", "Attending", "Arguing", "Leading", "Grouping", "Small Accumulating", 
+		"Treading", "Pervading", "Obstruction", "Concording People", "Great Possessing", "Humbling", "Providing-For", "Following", 
+		
+		"Correcting", 
+		//213
+		"Nearing", "Viewing", "Gnawing Bite", "Adorning", "Stripping", "Returning", "Without Embroiling",
+		"Great Accumulating", "Swallowing", "Great Exceeding", "Gorge", "Radiance", "Conjoining", "Persevering",
+		"Retiring", "Great Invigorating", "Prospering", "Darkening of the Light", "Dwelling People", "Polarising",
+		"Limping", "Taking-Apart", "Diminishing", "Augmenting", "Displacement", "Coupling",
+		"Clustering", "Ascending", "Confining", "Welling", "Skinning", "Holding", "Shake", "Bound",
+		"Infiltrating", "Converting the Maiden", "Abounding", "Sojourning", "Ground", "Open", "Dispersing",
+		"Articulating", "Center Returning", "Small Exceeding", 
+		//256
+		"Already Fording", "Not Yet Fording",*/
+		"Pot", "Peyote", "Psilocybin", "DMT", "Bananas", "Amphetamines", "Amyl Nitrate",
+		"Cough Syrup", "Glue", "Nalline", "Cocaine", "Heroin", "Nutmeg", "Paregoric", 
+		"Peanuts", "Hydrangea leaves", "Electronic bugging devices", "Microphones", "Bumper beepers", "Voice-activated tape recorders", "Electronic bug detection", "Electronic jamming", "Electronic scramblers", "Mail order and retail electronics outlets", "Broadcasting free radio", "Telephone and communications sabotage", "Other forms of sabotage", "Natural weapons", "Hand-to-hand combat", "Application of hand weapons", "Hand weapons", "Knives", "Impromptu weapons", "Brass knuckles and clubs", "Cattle prod", "Garrote", "Guerrilla Training", "Pistols and revolvers", "Holsters", "Rifles", "Semi-automatic and automatic weapons", "Shotguns", "Converting a shotgun into a grenade launcher", "Silencers", "How to build a silencer for a pistol", "How to build a silencer for a submachine gun", "Bows and arrows", "Chemicals and gases", "How to make tear gas in your basement", "Defense and medical treatment for gases", "How to make nitroglycerin", "How to make mercury fulminate", "How to make blasting gelatin", "Formulas for the straight dynamite series", "How to make chloride of azode", "Formulas for ammonium nitrate compounds", "Formulas for gelatin dynamites", "How to make TNT", "How to make tetiyl", "How to make picric acid", "Formulas for Mack powder", "How to make smokeless powder", "How to make nitrogen tri-iodide", "Formulas for different-colered smoke screens", "Household substitutes", "Safety precautions", "Basic formulas for demolitions use", "Some important principles", "Tamping", "Placement of charges", "Bridge destruction", "Detonators", "Release of pressure detonators", "Time delay devices", "Road trap", "Walk trap", "Bangalore torpedo", "Molotov Cocktail", "Homemade hand grenade", "How to make an anti-personnel grenade", "Book trap", "Door-handle traps", "Loose floorboard trap", "Gate trap", "Chimney trap", "Lamp trap", "Car trap", "Pipe trap", "Pen trap", "Whistle trap and other handy devices", "Cacodyal",
+		//347
+		"The Way", "Tail of the Dragon", "The Boy", "Lesser Fortune", "The Girl", "Loss", "The Prison", "Joy", "Head of the Dragon",
+		"Conjunction", "Gain", "Red", "Greater Fortune", "White", "Sorrow", "People" ]
+
+	$(document).ready(function(){
+
+		$("a").click(function(){
+			$("#spellbook").empty();
+		})
+
+		//one line
+
+		$("#QRNG").click(function(e){
+			e.preventDefault();
+
+			$.get("https://qrng.anu.edu.au/API/jsonI.php?length=1&type=uint8", function(data){
+							
+				if(Math.random() < 0.5){
+					$("#spellbook").append("-");
+				}				
+				$("#spellbook").append(tarot[data.data[0]]);
+				$("#spellbook").append("<br>");
+			})
+
+			
+		})
+
+
+	})
+	
+
+</script>
